@@ -1,22 +1,29 @@
 {
   "name": "hookmaster",
   "version": "1.0.0",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "refresh:pack": "rm -rf *.tgz hookmaster-*",
-    "refresh": "rm -rf dist node_modules",
-    "refresh:dist": "rm -rf dist"
-  },
-  "author": "",
-  "license": "ISC",
   "description": "",
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --fix --cache",
+    "prepare": "husky",
+    "pretty": "prettier --cache --write . && sort-package-json",
+    "refresh": "rm -rf dist node_modules",
+    "refresh:dist": "rm -rf dist",
+    "refresh:pack": "rm -rf *.tgz hookmaster-*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@manufac/eslint-config": "^4.2.1",
+    "@manufac/prettier-config": "^1.0.6",
     "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.1"
+    "@types/react-dom": "^18.3.1",
+    "husky": "^9.1.6",
+    "sort-package-json": "^2.10.1"
   }
 }
