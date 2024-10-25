@@ -6,6 +6,7 @@
   "author": "",
   "scripts": {
     "build": "tsc",
+    "jest": "test",
     "lint": "eslint --fix --cache",
     "prepare": "husky",
     "pretty": "prettier --cache --write . && sort-package-json",
@@ -24,6 +25,7 @@
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "husky": "^9.1.6",
+    "jest": "^29.7.0",
     "sort-package-json": "^2.10.1"
   }
 }
