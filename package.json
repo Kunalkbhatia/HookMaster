@@ -11,8 +11,6 @@
     "prepare": "husky",
     "pretty": "prettier --cache --write . && sort-package-json",
     "refresh": "rm -rf dist node_modules",
-    "refresh:dist": "rm -rf dist",
-    "refresh:pack": "rm -rf *.tgz hookmaster-*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

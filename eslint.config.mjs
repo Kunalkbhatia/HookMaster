@@ -1,3 +1,3 @@
-import manufacEslintConfig from "@manufac/eslint-config";
+// import manufacEslintConfig from "@manufac/eslint-config";
 
-export default [...manufacEslintConfig];
+// export default [...manufacEslintConfig];
