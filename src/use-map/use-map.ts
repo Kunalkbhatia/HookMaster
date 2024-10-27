@@ -1,11 +1,7 @@
 import { useReducer, useRef } from "react";
+import { useRerender } from "../utils/use-rerender";
 
 const reducer = (value: number) => (value + 1) % 1000000;
-
-export function useRerender(): () => void {
-  const [, update] = useReducer(reducer, 0);
-  return update;
-}
 
 export function useMap<T, V>(initialState?: [T, V][]): Map<T, V> {
   //  useRef allows you to keep the Map instance (mapRef.current) persist across renders caused by other states. This is important for maintaining the state of the map without disrupting the component lifecycle.
