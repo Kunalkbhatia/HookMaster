@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import { useRerender } from '../utils/use-rerender';
+import { useRef } from "react";
+import { useRerender } from "../utils/use-rerender";
 
 export function useSet<T>(values?: T[]): Set<T> {
   const setRef = useRef(new Set(values));
