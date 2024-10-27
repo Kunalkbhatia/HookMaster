@@ -19,7 +19,7 @@ export function useMap<T, V>(initialState?: [T, V][]): Map<T, V> {
   };
 
   mapRef.current.delete = (...keyValuePair) => {
-    const updatedMap = Map.prototype.delete.apply(keyValuePair, keyValuePair);
+    const updatedMap = Map.prototype.delete.apply(mapRef, keyValuePair);
     forceRender();
     return updatedMap;
   };
