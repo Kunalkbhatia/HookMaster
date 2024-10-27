@@ -8,18 +8,18 @@ export function useMap<T, V>(initialState?: [T, V][]): Map<T, V> {
   const mapRef = useRef(new Map<T, V>(initialState));
   const forceRender = useRerender();
   mapRef.current.set = (...keyValuePair) => {
-    Map.prototype.set.apply(mapRef, keyValuePair);
+    Map.prototype.set.apply(mapRef.current, keyValuePair);
     forceRender();
     return mapRef.current;
   };
 
   mapRef.current.clear = (...keyValuePair) => {
-    Map.prototype.clear.apply(mapRef, keyValuePair);
+    Map.prototype.clear.apply(mapRef.current, keyValuePair);
     forceRender();
   };
 
   mapRef.current.delete = (...keyValuePair) => {
-    const updatedMap = Map.prototype.delete.apply(mapRef, keyValuePair);
+    const updatedMap = Map.prototype.delete.apply(mapRef.current, keyValuePair);
     forceRender();
     return updatedMap;
   };
