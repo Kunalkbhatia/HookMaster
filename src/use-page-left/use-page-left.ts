@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
-export function usePageLeave(onPageLeave: () => void) {
+export function usePageLeft(onPageLeft: () => void) {
   useEffect(() => {
-    document.documentElement.addEventListener('mouseleave', onPageLeave);
-    return () => document.documentElement.removeEventListener('mouseleave', onPageLeave);
+    document.documentElement.addEventListener('mouseleave', onPageLeft);
+    return () => document.documentElement.removeEventListener('mouseleave', onPageLeft);
   }, []);
 }
