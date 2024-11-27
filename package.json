@@ -1,9 +1,19 @@
 {
-  "name": "hookmaster",
+  "name": "hook-master",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hook Master is a react hook library that make your development really smooth and fast",
+  "keywords": [
+    "react",
+    "hooks",
+    "development",
+    "nextjs",
+    "custom hooks",
+    "javascript",
+    "typescript"
+  ],
   "license": "ISC",
   "author": "",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "jest": "test",
