@@ -20,5 +20,5 @@ export function useValidateState<T>(
     setValue(value);
   };
 
-  return [{ value, valid }, onChange];
+  return [{ value, valid }, onChange] as const;
 }

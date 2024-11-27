@@ -14,5 +14,5 @@ export function useDebounce<T = any>(initialValue: T, delay: number) {
     }, delay);
   }, []);
 
-  return [value, debouncedSetValue];
+  return [value, debouncedSetValue] as const;
 }
