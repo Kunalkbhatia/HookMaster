@@ -1,5 +1,5 @@
 {
-  "name": "hookmaster",
+  "name": "@hookmaster/hooks",
   "version": "1.0.0",
   "description": "Hook Master is a react hook library that make your development really smooth and fast",
   "keywords": [
