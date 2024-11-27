@@ -20,8 +20,8 @@ export function useCounter(
   const incrementBy = (value: number) => setCount((current) => clamp(current + value, min, max));
   const decrement = () => setCount((current) => clamp(current - 1, min, max));
   const decrementBy = (value: number) => setCount((current) => clamp(current - value, min, max));
-  const set = (value: number) => setCount((current) => clamp(value, min, max));
+  const set = (value: number) => setCount(clamp(value, min, max));
   const reset = () => setCount(clamp(intialValue, min, max));
 
-  return [count, { increment, incrementBy, decrement, decrementBy, set, reset }];
+  return [count, { increment, incrementBy, decrement, decrementBy, set, reset }] as const;
 }
