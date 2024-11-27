@@ -1,9 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 export function useAddEventListner<K extends keyof HTMLElementEventMap, T extends HTMLElement = any>(
   type: K,
   listener: (this: HTMLDivElement, ev: HTMLElementEventMap[K]) => any,
-  options?: boolean | AddEventListenerOptions
+  options?: boolean | AddEventListenerOptions,
 ) {
   const ref = useRef<T>();
 

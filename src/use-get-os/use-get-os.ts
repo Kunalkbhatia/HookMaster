@@ -1,7 +1,7 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from "react";
 
-export type OS = 'undetermined' | 'macos' | 'ios' | 'windows' | 'android' | 'linux';
-export const useIsomorphicEffect = typeof document !== 'undefined' ? useLayoutEffect : useEffect;
+export type OS = "undetermined" | "macos" | "ios" | "windows" | "android" | "linux";
+export const useIsomorphicEffect = typeof document !== "undefined" ? useLayoutEffect : useEffect;
 
 function isMacOS(userAgent: string): boolean {
   const macosPattern = /(Macintosh)|(MacIntel)|(MacPPC)|(Mac68K)/i;
@@ -34,29 +34,29 @@ function isLinux(userAgent: string): boolean {
 }
 
 function getOS(): OS {
-  if (typeof window === 'undefined') {
-    return 'undetermined';
+  if (typeof window === "undefined") {
+    return "undetermined";
   }
 
   const { userAgent } = window.navigator;
 
-  if (isIOS(userAgent) || (isMacOS(userAgent) && 'ontouchend' in document)) {
-    return 'ios';
+  if (isIOS(userAgent) || (isMacOS(userAgent) && "ontouchend" in document)) {
+    return "ios";
   }
   if (isMacOS(userAgent)) {
-    return 'macos';
+    return "macos";
   }
   if (isWindows(userAgent)) {
-    return 'windows';
+    return "windows";
   }
   if (isAndroid(userAgent)) {
-    return 'android';
+    return "android";
   }
   if (isLinux(userAgent)) {
-    return 'linux';
+    return "linux";
   }
 
-  return 'undetermined';
+  return "undetermined";
 }
 
 interface UseOsOptions {
@@ -64,7 +64,7 @@ interface UseOsOptions {
 }
 
 export function useGetOS(options: UseOsOptions = { getValueInEffect: true }): OS {
-  const [value, setValue] = useState<OS>(options.getValueInEffect ? 'undetermined' : getOS());
+  const [value, setValue] = useState<OS>(options.getValueInEffect ? "undetermined" : getOS());
 
   useIsomorphicEffect(() => {
     if (options.getValueInEffect) {

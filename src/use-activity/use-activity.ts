@@ -1,12 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
-const DEFAULT_EVENTS: (keyof DocumentEventMap)[] = [
-  'keypress',
-  'mousemove',
-  'touchmove',
-  'click',
-  'scroll',
-];
+const DEFAULT_EVENTS: (keyof DocumentEventMap)[] = ["keypress", "mousemove", "touchmove", "click", "scroll"];
 const DEFAULT_OPTIONS = {
   events: DEFAULT_EVENTS,
   initialState: true,
@@ -14,7 +8,7 @@ const DEFAULT_OPTIONS = {
 
 export function useActivity(
   timeout: number,
-  options?: Partial<{ events: (keyof DocumentEventMap)[]; initialState: boolean }>
+  options?: Partial<{ events: (keyof DocumentEventMap)[]; initialState: boolean }>,
 ) {
   const { events, initialState } = { ...DEFAULT_OPTIONS, ...options };
   const [activity, setActivity] = useState<boolean>(initialState);
@@ -37,7 +31,7 @@ export function useActivity(
 
     // Start the timer immediately instead of waiting for the first event to happen
     timer.current = window.setTimeout(() => {
-       setActivity(true);
+      setActivity(true);
     }, timeout);
 
     return () => {

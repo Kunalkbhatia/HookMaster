@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export function useIsHovered<T extends HTMLElement = HTMLDivElement>() {
   const [hovered, setHovered] = useState(false);
@@ -8,12 +8,12 @@ export function useIsHovered<T extends HTMLElement = HTMLDivElement>() {
 
   useEffect(() => {
     if (ref.current) {
-      ref.current.addEventListener('mouseenter', onMouseEnter);
-      ref.current.addEventListener('mouseleave', onMouseLeave);
+      ref.current.addEventListener("mouseenter", onMouseEnter);
+      ref.current.addEventListener("mouseleave", onMouseLeave);
 
       return () => {
-        ref.current?.removeEventListener('mouseenter', onMouseEnter);
-        ref.current?.removeEventListener('mouseleave', onMouseLeave);
+        ref.current?.removeEventListener("mouseenter", onMouseEnter);
+        ref.current?.removeEventListener("mouseleave", onMouseLeave);
       };
     }
 

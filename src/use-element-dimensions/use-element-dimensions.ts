@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from "react";
 
-type ObserverRect = Omit<DOMRectReadOnly, 'toJSON'>;
+type ObserverRect = Omit<DOMRectReadOnly, "toJSON">;
 
 const defaultState: ObserverRect = {
   x: 0,
@@ -21,7 +21,7 @@ export function useResizeObserver<T extends HTMLElement = any>(options?: ResizeO
 
   const observer = useMemo(
     () =>
-      typeof window !== 'undefined'
+      typeof window !== "undefined"
         ? new ResizeObserver((entries: any) => {
             const entry = entries[0];
 
@@ -36,7 +36,7 @@ export function useResizeObserver<T extends HTMLElement = any>(options?: ResizeO
             }
           })
         : null,
-    []
+    [],
   );
 
   useEffect(() => {

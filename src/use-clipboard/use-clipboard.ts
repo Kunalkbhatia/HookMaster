@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export function useClipboard({ timeout = 2000 } = {}) {
   const [error, setError] = useState<Error | null>(null);
@@ -12,13 +12,13 @@ export function useClipboard({ timeout = 2000 } = {}) {
   };
 
   const copy = (valueToCopy: any) => {
-    if ('clipboard' in navigator) {
+    if ("clipboard" in navigator) {
       navigator.clipboard
         .writeText(valueToCopy)
         .then(() => handleCopyResult(true))
         .catch((err) => setError(err));
     } else {
-      setError(new Error('useClipboard: navigator.clipboard is not supported'));
+      setError(new Error("useClipboard: navigator.clipboard is not supported"));
     }
   };
 
